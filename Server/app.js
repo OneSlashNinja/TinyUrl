@@ -22,9 +22,12 @@ baseRouter.route('/')
 		res.json(responseJson);
 	})
 	.post(function(req, res){
-		console.log(req.body);
+		var requestJson = req.body;
+		console.log(requestJson);
 
-		res.send(req.body);
+		mysqlUtil.insertUrl(requestJson.url, function(id){
+			res.send({id: id});
+		});
 	});
 
 baseRouter.route('/:urlId')

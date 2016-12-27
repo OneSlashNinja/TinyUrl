@@ -30,7 +30,7 @@ var insertUrl = function(urlStr, callback){
 			return;
 		}
 
-		console.log('connected as id ' + connection.threadId);
+		console.log('connected as id ' + dbConn.threadId);
 
 		if(result){
 			console.log(result);
