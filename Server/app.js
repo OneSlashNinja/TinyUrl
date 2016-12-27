@@ -5,6 +5,7 @@ var express = require('express'),
 
 var app = express();
 
+var base62 = require('./base62.js');
 var mysqlUtil = require('./mysqlUtil');
 mysqlUtil.dbConnect();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 var baseRouter = express.Router();
+
 
 baseRouter.route('/')
 	.get(function(req, res){
