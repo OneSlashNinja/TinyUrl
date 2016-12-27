@@ -1,6 +1,7 @@
 "use strict";
 
-var express = require('express');
+var express = require('express'),
+	bodyParser = require('body-parser');
 
 var app = express();
 
@@ -8,6 +9,9 @@ var mysqlUtil = require('./mysqlUtil');
 mysqlUtil.dbConnect();
 
 var port = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 var baseRouter = express.Router();
 
@@ -18,9 +22,9 @@ baseRouter.route('/')
 		res.json(responseJson);
 	})
 	.post(function(req, res){
-		console.log(req);
+		console.log(req.body);
 
-		res.send(req);
+		res.send(req.body);
 	});
 
 baseRouter.route('/:urlId')
