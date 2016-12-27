@@ -28,13 +28,13 @@ baseRouter.route('/')
 		console.log(requestJson);
 
 		mysqlUtil.insertUrl(requestJson.url, function(id){
-			res.send({id: id});
+			res.send({id: base62.encode(id)});
 		});
 	});
 
 baseRouter.route('/:urlId')
 	.get(function(req, res){
-		mysqlUtil.getUrlById(req.params.urlId, function(urlStr){
+		mysqlUtil.getUrlById(base62.decode(req.params.urlId), function(urlStr){
 			res.json(urlStr);
 		});
 	});
