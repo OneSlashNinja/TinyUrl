@@ -55,9 +55,25 @@ var getUrlById = function(id, callback){
 	});
 };
 
+var getExistedUrl = function(url, callback){
+	var query = dbConn.query('select id from tinyurl where url = ?', url, function(err, rows, fields){
+		console.log(query.sql);
+
+		if (err) {
+			console.error('error connecting: ' + err.stack);
+			return;
+		}
+
+		console.log('connected as id ' + dbConn.threadId);
+
+		callback(rows);
+	});
+};
+
 module.exports = {
 	dbConnect: dbConnect,
 	dbEndConnection: dbEndConnection,
 	insertUrl: insertUrl,
-	getUrlById: getUrlById
+	getUrlById: getUrlById,
+	getExistedUrl: getExistedUrl
 };

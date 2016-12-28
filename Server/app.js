@@ -27,8 +27,16 @@ baseRouter.route('/')
 		var requestJson = req.body;
 		console.log(requestJson);
 
-		mysqlUtil.insertUrl(requestJson.url, function(id){
-			res.send({id: base62.encode(id)});
+		mysqlUtil.getExistedUrl(requestJson.url, function(resultRows){
+			if(resultRows.length == 0){
+				mysqlUtil.insertUrl(requestJson.url, function(id){
+					res.send({id: base62.encode(id)});
+				});
+				return;
+			}
+
+
+			res.send({id: base62.encode(resultRows[0].id)});
 		});
 	});
 
