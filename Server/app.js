@@ -16,15 +16,11 @@ app.use(bodyParser.json());
 
 app.use( express.static(__dirname + "/../client") );
 
-var baseRouter = express.Router();
+var baseRouter = express.Router(),
+	apiRouter = express.Router();
 
 
-baseRouter.route('/')
-	.get(function(req, res){
-		var responseJson = {longUrl: "www.google.com"};
-
-		res.json(responseJson);
-	})
+apiRouter.route('/')
 	.post(function(req, res){
 		var requestJson = req.body;
 		console.log(requestJson);
@@ -42,14 +38,31 @@ baseRouter.route('/')
 		});
 	});
 
+// apiRouter.route('/:urlId')
+// 	.get(function(req, res){
+// 		mysqlUtil.getUrlById(base62.decode(req.params.urlId), function(urlStr){
+// 			res.json(urlStr);
+// 		});
+// 	});
+
 baseRouter.route('/:urlId')
 	.get(function(req, res){
-		mysqlUtil.getUrlById(base62.decode(req.params.urlId), function(urlStr){
-			res.json(urlStr);
+		mysqlUtil.getUrlById(base62.decode(req.params.urlId), function(urlObj){
+			//res.json(urlStr);
+
+			//if the short url is not found in DB, then redirect to home page
+			//404 page in the future maybe
+			if(!urlObj){
+				res.redirect('/');
+				return;
+			}
+
+			res.redirect('http://' + urlObj.url);
 		});
 	});
 
-app.use('/api', baseRouter);
+app.use('/', baseRouter);
+app.use('/api', apiRouter);
 
 // please use the above way to route
 // app.get('/', function(req, res){
