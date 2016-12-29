@@ -57,7 +57,7 @@ baseRouter.route('/:urlId')
 				return;
 			}
 
-			res.redirect('http://' + urlObj.url);
+			res.redirect(urlObj.url);
 		});
 	});
 

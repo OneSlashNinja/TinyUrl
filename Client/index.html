@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 
 	<link rel="stylesheet" href="./dist/bootstrap.min.css">
@@ -33,17 +35,18 @@
 		<div class="row">
 		  <div class="col-lg-4 col-lg-offset-4">
 		    <div class="input-group">
-		      <input type="text" class="form-control" placeholder="long url...">
+		      <input type="text" class="form-control" placeholder="long url..." v-model="longUrl">
 		      <span class="input-group-btn">
-		        <button class="btn btn-primary" type="button">Shrink it!</button>
+		        <button class="btn btn-primary" type="button" @click="shrinkLongUrl">Shrink it!</button>
 		      </span>
 		    </div>
 		  </div>
 		</div>
 
 		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4" >
-
+			<div class="col-lg-4 col-lg-offset-4" v-show="tinyUrl">
+				The generated tiny url: 
+				<h2>{{tinyUrl}}</h2>
 			</div>
 		</div>
 
