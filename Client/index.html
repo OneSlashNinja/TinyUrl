@@ -3,11 +3,53 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+
+	<link rel="stylesheet" href="./dist/bootstrap.min.css">
 </head>
+<header class="navbar navbar-default navbar-static-top">
+	<nav class="container" role="navigation">
+		<div class="navbar-header">
+			<a href="index.html" class="navbar-brand">Tiny Url</a>
+
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+
+		<ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+			<li><a href="#">Home</a></li>
+			<li><a href="">Example</a></li>
+			<li><a href="">Contact us</a></li>
+		</ul>
+	</nav>
+</header>
 <body>
+
 	<div id="app">
-		{{message}}
+
+		<div class="row">
+		  <div class="col-lg-4 col-lg-offset-4">
+		    <div class="input-group">
+		      <input type="text" class="form-control" placeholder="long url...">
+		      <span class="input-group-btn">
+		        <button class="btn btn-primary" type="button">Shrink it!</button>
+		      </span>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4" >
+
+			</div>
+		</div>
+
+
 	</div>
+
 	<script src="dist/bundle.js"></script>
 </body>
 </html>

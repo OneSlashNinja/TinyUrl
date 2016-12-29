@@ -5,11 +5,14 @@
 //var Vue = require('vue');
 
 var Vue = require('vue/dist/vue.js');
+var $ = require('jquery');
+window.jQuery = $;
+require('bootstrap');
 
 new Vue({
 	el:'#app',
 	data:{
-		"message": "This is tiny Url message"
+		"shortenUrl": null
 	},
 	methods:{
 
