@@ -9,16 +9,16 @@ You may check the explaination on [Wiki](https://en.wikipedia.org/wiki/TinyURL) 
 ## Tech Stack
 
 Server:
-* Nodejs + Express
-* MySQL
+* [Nodejs](https://nodejs.org/) + [Express](http://expressjs.com/)
+* [MySQL](https://www.mysql.com/)
 
 Client:
-* Vue.js
-* Bootstrap
+* [Vue.js](https://vuejs.org/)
+* [Bootstrap](http://getbootstrap.com/)
 
 Build Tool:
-* Gulp
-* Browserify
+* [Gulp](http://gulpjs.com/)
+* [Browserify](http://browserify.org/)
 
 ## Get started
 
