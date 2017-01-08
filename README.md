@@ -41,7 +41,7 @@ So what is the trick to shorten the long url into the tiny url?
 
 Actually it is very easy and straightforward. Every time you are trying to shorten a long url, the long url is stored into the database and return a unique incremental ID. Then we may use this short ID to retrive the long url.
 
-To make it more efficient, we use 62 base(similar to [64 base](https://en.wikipedia.org/wiki/Base64), using ASCII characters including **0-9, A-Z, a-z**) instead of 10 base, so that shorter string may stand for more urls.
+To make it more efficient, we use base 62 (similar to [base 64](https://en.wikipedia.org/wiki/Base64), using ASCII characters including **0-9, A-Z, a-z**) instead of base 10, so that shorter string may stand for more urls.
 
 ## At the end
 
