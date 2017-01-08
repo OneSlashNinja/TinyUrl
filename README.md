@@ -23,7 +23,9 @@ Build Tool:
 ## Get started
 
 First of all, please make sure you have installed the MySQL locally and Node locally and started MySQL service.
+
 Then please execute the **db_init_script.sql** to create the database and relative table for this project, and make sure the username and password is correctly configed in **Server/mysqlUtil.js** file.
+
 After that, run `npm install` to install all the dependencies needed for this project.
 
 And please install **gulp** globally by run command:
