@@ -6,7 +6,7 @@ This project implemented a integrated solution including backend server and fron
 
 You may check the explaination on [Wiki](https://en.wikipedia.org/wiki/TinyURL) and try it at [tinyurl.com](http://tinyurl.com/)
 
-## Tech Stack used in this project
+## Tech Stack
 
 Server:
 * Nodejs + Express
@@ -35,7 +35,7 @@ Now, you are all set. please direct your terminal to the **Server** folder and r
 
 Enjoy!
 
-## Algorithm (How it works):
+## Algorithm (How it works)
 
 So what is the trick to shorten the long url into the tiny url?
 
